@@ -3,7 +3,9 @@
 # instalacion cliente PAM
 # - crear usuarios locales
 #----------------------------
-
+cp /opt/docker/nslcd.conf /etc/nslcd.conf
+cp /opt/docker/nsswitch.conf /etc/nsswitch.conf
+cp /opt/docker/ldap.conf /etc/openldap/ldap.conf
 groupadd localgrp01
 groupadd localgrp02
 useradd -g users -G localgrp01 local01
