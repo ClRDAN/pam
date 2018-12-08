@@ -1,13 +1,12 @@
 #! /bin/bash
-# @edt ASIX M06 2018-2019
+# @edt ASIX M06 2018-19
 # instalacion cliente PAM
-# - crear usuarios locales
-#----------------------------
-cp /opt/docker/nslcd.conf /etc/nslcd.conf
-cp /opt/docker/nsswitch.conf /etc/nsswitch.conf
-cp /opt/docker/ldap.conf /etc/openldap/ldap.conf
+# creacion de usuarios locales
+#--------------------------------
 cp /opt/docker/system-auth.edt /etc/pam.d/system-auth.edt
+cp /opt/docker/pam_mount.conf.xml /etc/security/pam_mount.conf.xml
 ln -sf /etc/pam.d/system-auth.edt /etc/pam.d/system-auth
+./authconfig.conf
 groupadd localgrp01
 groupadd localgrp02
 useradd -g users -G localgrp01 local01
